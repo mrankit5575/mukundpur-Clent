@@ -264,14 +264,14 @@ const Navbar = () => {
               ))}
             </div>
             <div className="pt-4 pb-6 px-4 space-y-2">
-              <Link href="/login" passHref>
+              <Link href="/aboutus" passHref>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full px-4 py-2 rounded-md text-base font-medium text-white bg-pink-500 hover:bg-pink-600"
                   onClick={closeMenu}
                 >
-                  Login
+                  About Us
                 </motion.button>
               </Link>
               <Link href="/signup" passHref>
