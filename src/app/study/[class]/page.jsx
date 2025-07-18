@@ -7,10 +7,9 @@ import { FiBook, FiChevronRight } from 'react-icons/fi'
 import studyMaterial from "@/data/subjects"
 
 const ClassPage = ({ params }) => {
-  const { class: cls } = use(params)  // ✅ Fixed: using `use()` for params
+  const { class: cls } = use(params)
   const classData = studyMaterial[cls]
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -49,7 +48,7 @@ const ClassPage = ({ params }) => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8 text-center"
+          className="mb-8 text-center mt-20"
         >
           <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
@@ -73,10 +72,7 @@ const ClassPage = ({ params }) => {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <Link
-                href={`/study/${cls}/${sub}`}
-                className="block h-full"
-              >
+              <Link href={`/study/${cls}/${sub}`} className="block h-full">
                 <div className="bg-white rounded-xl shadow-sm border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-300 h-full flex">
                   <div className="p-5 flex-1 flex items-center">
                     <div className="bg-blue-100 p-3 rounded-lg text-blue-600 mr-4">
@@ -87,7 +83,7 @@ const ClassPage = ({ params }) => {
                         {data.name}
                       </h2>
                       <p className="text-sm text-gray-500 mt-1">
-                        {Object.keys(data.topics).length} topics available
+                        {data.resources ? Object.keys(data.resources).length : 0} resources available
                       </p>
                     </div>
                   </div>

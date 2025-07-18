@@ -54,8 +54,8 @@ const Navbar = () => {
       icon: <Bookmark className="w-5 h-5" />,
       href: '/books',
       subItems: [
-        { name: 'Buy Books', href: '/books/buy' },
-        { name: 'Sell Books', href: '/books/sell' },
+        { name: 'Buy Books', href: '/buybook' },
+        { name: 'Sell Books', href: '/sellbook' },
         { name: 'Exchange Books', href: '/books/exchange' },
       ],
     },
