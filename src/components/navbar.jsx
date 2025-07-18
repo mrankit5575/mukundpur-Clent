@@ -30,7 +30,7 @@ const Navbar = () => {
       icon: <GraduationCap className="w-5 h-5" />,
       href: '/tutors',
       subItems: [
-        { name: 'Hire a Tutor', href: '/tutors/hire' },
+        { name: 'Hire a Tutor', href: '/hirecarrer' },
         { name: 'Become a Tutor', href: '/becomeTutor' },
         { name: 'Tutor Rates', href: '/tutors/rates' },
       ],
