@@ -31,7 +31,7 @@ const Navbar = () => {
       href: '/tutors',
       subItems: [
         { name: 'Hire a Tutor', href: '/tutors/hire' },
-        { name: 'Become a Tutor', href: '/tutors/become' },
+        { name: 'Become a Tutor', href: '/becomeTutor' },
         { name: 'Tutor Rates', href: '/tutors/rates' },
       ],
     },
@@ -173,22 +173,23 @@ const Navbar = () => {
 
           {/* Auth Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-2">
-            <Link href="/login" passHref>
-              <motion.button
+            <Link href="/aboutus" passHref>
+            <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-4 py-2 rounded-md text-sm font-medium text-indigo-900 bg-white hover:bg-gray-100"
+              >
+                                About Us
+
+              </motion.button>
+            </Link>
+            <Link href="/signup" passHref>
+            <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-2 rounded-md text-sm font-medium text-white bg-pink-500 hover:bg-pink-600"
               >
                 Login
-              </motion.button>
-            </Link>
-            <Link href="/signup" passHref>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 rounded-md text-sm font-medium text-indigo-900 bg-white hover:bg-gray-100"
-              >
-                Sign Up
               </motion.button>
             </Link>
           </div>

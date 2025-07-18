@@ -1,7 +1,7 @@
 const class6 = {
     name: "Class 6",
-    subjects: {
-      science: {
+    subjects: [
+      {
         name: "Science",
         resources: {
           pyq: {
@@ -18,7 +18,7 @@ const class6 = {
           mindmap: "https://drive.google.com/mindmap-link"
         }
       },
-      math: {
+      {
         name: "Mathematics",
         resources: {
           pyq: {
@@ -34,8 +34,36 @@ const class6 = {
           notes: "https://drive.google.com/notes-math",
           mindmap: "https://drive.google.com/mindmap-math"
         }
+      },
+      {
+        name: "Social Science",
+        resources: {
+          pyq: {
+            "2024": "https://drive.google.com/sst-2024",
+            "2023": "https://drive.google.com/sst-2023"
+          },
+          samplePaper: "https://drive.google.com/sample-paper-sst",
+          ncert: "https://drive.google.com/ncert-sst",
+          summary: "https://drive.google.com/summary-sst",
+          notes: "https://drive.google.com/notes-sst",
+          mindmap: "https://drive.google.com/mindmap-sst"
+        }
+      },
+      {
+        name: "English",
+        resources: {
+          pyq: {
+            "2024": "https://drive.google.com/english-2024",
+            "2023": "https://drive.google.com/english-2023"
+          },
+          samplePaper: "https://drive.google.com/sample-paper-english",
+          ncert: "https://drive.google.com/ncert-english",
+          summary: "https://drive.google.com/summary-english",
+          notes: "https://drive.google.com/notes-english",
+          mindmap: "https://drive.google.com/mindmap-english"
+        }
       }
-    }
+    ]
   };
   
   export default class6;
