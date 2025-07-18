@@ -29,7 +29,7 @@ const TutorsSection = () => {
       if (selectedClass !== "all") params.class = selectedClass;
       if (searchQuery.trim() !== "") params.search = searchQuery.trim();
 
-      const res = await axios.get("http://localhost:8080/api/", { params });
+      const res = await axios.get("https://server-k6vr.onrender.com/api/", { params });
       setTutors(res.data);
 
       // Extract unique subjects and classes from tutors

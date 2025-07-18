@@ -30,7 +30,7 @@ const BooksPage = () => {
         if (value) query.append(key, value);
       });
 
-      const response = await axios.get('http://localhost:8080/api/book/');
+      const response = await axios.get('https://server-k6vr.onrender.com/api/book/');
       setBooks(response.data.books || []); // fallback to [] if `books` is undefined
     } catch (error) {
       console.error('Error fetching books:', error);
