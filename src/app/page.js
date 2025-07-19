@@ -2,10 +2,11 @@
  import Navbar from '@/components/navbar'
 import StatsSection from '@/components/satsSection'
 import StudyMaterialSection from '@/components/studymaterial'
-import TutorsSection from '@/components/TutorSection'
-import BooksPage from '@/hooks/books'
+//  import BooksPage from '@/hooks/books'
  
  import React from 'react'
+ import TeacherList from '@/Teacher/TeacherList'  
+import BookList from '@/bookdata.js/BookList'
  
  function page() {
    return (
@@ -13,9 +14,10 @@ import BooksPage from '@/hooks/books'
     <Navbar/>
     <HeroSection/>
     <StudyMaterialSection/>
-     <BooksPage/>
-     <TutorsSection/>
-    <StatsSection/> 
+    <BookList/>
+     {/* <BooksPage/> */}
+     <TeacherList/> 
+     <StatsSection/> 
      
     
      </>

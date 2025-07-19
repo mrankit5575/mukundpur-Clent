@@ -58,6 +58,10 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap gap-4">
               <motion.button
+              onClick={() => {
+                const el = document.getElementById('tutor');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}  
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-[#0c0950] hover:bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold shadow-lg flex items-center gap-2"
@@ -69,6 +73,10 @@ export default function HeroSection() {
               </motion.button>
 
               <motion.button
+              onClick={() => {
+                const el = document.getElementById('teachers');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-transparent hover:bg-blue-50 text-[#0c0950] px-6 py-3 rounded-lg font-medium border border-[#0c0950]/20 shadow-md flex items-center gap-2"

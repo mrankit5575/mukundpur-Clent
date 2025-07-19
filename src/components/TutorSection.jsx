@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const MotionLink = motion(Link);
 
-const TutorsSection = () => {
+const TutorsSection = () => { 
   const [tutors, setTutors] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSubject, setSelectedSubject] = useState("all");
