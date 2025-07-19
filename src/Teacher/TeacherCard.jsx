@@ -116,7 +116,7 @@ export default function TeacherCard({ tutor, index }) {
             </div>
             <div className="flex items-center font-bold text-white bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-2 rounded-lg shadow-sm">
               <FaRupeeSign className="mr-1" size={12} />
-              <span>{tutor.rate.toLocaleString()}/hr</span>
+              {/* <span>{tutor.rate.toLocaleString()}</span> */}
             </div>
           </div>
 

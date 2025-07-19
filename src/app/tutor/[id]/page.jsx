@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import { tutors } from '@/teacherData/teacher';
 import { FaChalkboardTeacher, FaGraduationCap, FaMapMarkerAlt, FaRupeeSign, FaStar, FaBook } from 'react-icons/fa';
 import { IoTime } from 'react-icons/io5';
+import { use } from 'react'; // ✅ at the top
 
 export default function TutorProfilePage({ params }) {
-  const { id } = params;
+  // const { id } = params;
+  const { id } = use(params); // ✅ this line fixes the warning
+
   const tutor = tutors.find((t) => t.id === id);  
 
   if (!tutor) {
