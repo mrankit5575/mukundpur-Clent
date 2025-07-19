@@ -14,12 +14,12 @@ export default function TeacherList() {
             For Home Tuition & Personal Training – Learn Better, Score Higher
           </p>
           <p className="mt-4 text-xl font-semibold text-red-600">
-            Get  <span className="underline">99%</span>  results with tutors who’ve done it before — no hype, just help..
+            Get <span className="underline">99%</span> results with tutors who’ve done it before — no hype, just help.
           </p>
         </div>
 
-        {/* Tutor Cards Grid (Responsive) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Tutor Cards Grid - Fully Responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {tutors.map((tutor) => (
             <TeacherCard key={tutor.id} tutor={tutor} />
           ))}

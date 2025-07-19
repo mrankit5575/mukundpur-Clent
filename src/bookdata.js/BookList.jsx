@@ -7,7 +7,7 @@ import { FaExchangeAlt, FaSearch, FaFilter } from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function BookList() {
-  const previewBooks = books.slice(0, 8); // Show 8 books for preview
+  const previewBooks = books.slice(0, 8); // Show 8 books
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50">
@@ -31,7 +31,7 @@ export default function BookList() {
           </p>
         </motion.div>
 
-        {/* Search and Filter Bar */}
+        {/* Search & Filter */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,13 +50,13 @@ export default function BookList() {
               />
             </div>
             <div className="flex gap-2 w-full md:w-auto">
-              <select className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+              <select className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full md:w-auto">
                 <option>All Classes</option>
                 <option>Class 6–8</option>
                 <option>Class 9–10</option>
                 <option>Class 11–12</option>
               </select>
-              <button className="flex items-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              <button className="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors w-full md:w-auto">
                 <FaFilter />
                 Filters
               </button>
@@ -69,7 +69,7 @@ export default function BookList() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl p-6 mb-10 grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl p-6 mb-10 grid grid-cols-2 sm:grid-cols-4 gap-6"
         >
           <div className="text-center">
             <p className="text-3xl font-bold">{books.length}+</p>
@@ -94,7 +94,7 @@ export default function BookList() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {previewBooks.map((book, index) => (
             <BookCard key={book.id} book={book} index={index} />
@@ -119,7 +119,7 @@ export default function BookList() {
           </Link>
         </motion.div>
 
-        {/* CTA Section */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
