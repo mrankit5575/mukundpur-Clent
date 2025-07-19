@@ -173,23 +173,22 @@ const Navbar = () => {
 
           {/* Auth Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-2">
-            <Link href="/aboutus" passHref>
+            <Link href="blog" passHref>
             <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-2 rounded-md text-sm font-medium text-indigo-900 bg-white hover:bg-gray-100"
               >
-                                About Us
-
+Blog
               </motion.button>
             </Link>
-            <Link href="/signup" passHref>
+            <Link href="/aboutus" passHref>
             <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-2 rounded-md text-sm font-medium text-white bg-pink-500 hover:bg-pink-600"
               >
-                Login
+                About Us
               </motion.button>
             </Link>
           </div>
@@ -278,10 +277,10 @@ const Navbar = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-4 py-2 rounded-md text-base font-medium text-indigo-900 bg-white hover:bg-gray-100"
+                  className="w-full px-4 py-2 mt-5 rounded-md text-base font-medium text-indigo-900 bg-white hover:bg-gray-100"
                   onClick={closeMenu}
                 >
-                  Sign Up
+                  Blog
                 </motion.button>
               </Link>
             </div>
