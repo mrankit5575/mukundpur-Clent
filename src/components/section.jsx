@@ -1,4 +1,4 @@
-// components/Footer.jsx
+ // components/Footer.jsx
 'use client'
 
 import { motion } from 'framer-motion';
@@ -12,19 +12,19 @@ const Footer = () => {
       title: "Quick Links",
       links: [
         { name: "Home", href: "/" },
-        { name: "Courses", href: "/courses" },
+        // { name: "Courses", href: "/courses" },
         { name: "Quiz", href: "/quiz" },
         { name: "Blog", href: "/blog" },
-        { name: "About Us", href: "/about" },
+        { name: "About Us", href: "/aboutus" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { name: "Study Materials", href: "/materials" },
-        { name: "Practice Tests", href: "/tests" },
+        { name: "Study Materials", href: "/study" },
+        // { name: "Practice Tests", href: "/tests" },
         { name: "Video Lectures", href: "/videos" },
-        { name: "Research Papers", href: "/papers" },
+        // { name: "Research Papers", href: "/papers" },
       ],
     },
     {
@@ -39,6 +39,15 @@ const Footer = () => {
   ];
 
   const socialLinks = [
+    {
+      name: "WhatsApp",
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      ),
+      href: "https://wa.me/919718659236",
+    },
     {
       name: "Facebook",
       icon: (
@@ -67,27 +76,18 @@ const Footer = () => {
       href: "#",
     },
     {
-      name: "LinkedIn",
+      name: "Email",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
       ),
-      href: "#",
-    },
-    {
-      name: "YouTube",
-      icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-        </svg>
-      ),
-      href: "#",
+      href: "mailto:ankitroy5575@gmail.com",
     },
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-white text-navy-900">
       <div className="container mx-auto px-6 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -101,7 +101,7 @@ const Footer = () => {
             <Link href="/" className="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-indigo-500 mr-2"
+                className="h-8 w-8 text-blue-800 mr-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -113,9 +113,9 @@ const Footer = () => {
                   d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                 />
               </svg>
-              <span className="text-2xl font-bold text-white">Crack_IQ</span>
+              <span className="text-2xl font-bold text-blue-800">Crack_IQ</span>
             </Link>
-            <p className="text-gray-400">
+            <p className="text-blue-900">
               Empowering learners through innovative education technology and
               resources.
             </p>
@@ -124,20 +124,34 @@ const Footer = () => {
                 <motion.a
                   key={social.name}
                   href={social.href}
-                  whileHover={{ y: -2, color: "#6366F1" }}
-                  className="text-gray-400 hover:text-indigo-500 transition"
+                  whileHover={{ y: -2, color: "#1E3A8A" }}
+                  className="text-blue-800 hover:text-blue-600 transition"
                   aria-label={social.name}
                 >
                   {social.icon}
                 </motion.a>
               ))}
             </div>
+            <div className="pt-2">
+              <p className="text-blue-900 flex items-center">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                ankitroy5575@gmail.com
+              </p>
+              <p className="text-blue-900 flex items-center mt-1">
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                +91 9718659236
+              </p>
+            </div>
           </div>
 
           {/* Footer Links */}
           {footerLinks.map((section) => (
             <div key={section.title} className="space-y-4">
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-lg font-semibold text-blue-800">
                 {section.title}
               </h3>
               <ul className="space-y-2">
@@ -149,7 +163,7 @@ const Footer = () => {
                   >
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-indigo-500 transition"
+                      className="text-blue-900 hover:text-blue-600 transition"
                     >
                       {link.name}
                     </Link>
@@ -161,24 +175,24 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">
+            <h3 className="text-lg font-semibold text-blue-800">
               Subscribe to our Newsletter
             </h3>
-            <p className="text-gray-400">
+            <p className="text-blue-900">
               Get the latest updates on courses, resources, and educational tips.
             </p>
             <form className="flex flex-col space-y-3">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="px-4 py-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="px-4 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent"
                 required
               />
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded transition"
+                className="px-4 py-2 bg-blue-800 hover:bg-blue-700 text-white rounded transition"
               >
                 Subscribe
               </motion.button>
@@ -192,7 +206,7 @@ const Footer = () => {
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="border-t border-gray-800 my-8"
+          className="border-t border-gray-300 my-8"
         />
 
         {/* Bottom Footer */}
@@ -203,25 +217,25 @@ const Footer = () => {
           viewport={{ once: true }}
           className="flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-gray-500 text-sm">
+          <p className="text-blue-700 text-sm">
             © {currentYear} Crack_IQ. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
               href="/privacy"
-              className="text-gray-500 hover:text-gray-300 text-sm transition"
+              className="text-blue-700 hover:text-blue-900 text-sm transition"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-gray-500 hover:text-gray-300 text-sm transition"
+              className="text-blue-700 hover:text-blue-900 text-sm transition"
             >
               Terms of Service
             </Link>
             <Link
               href="/cookies"
-              className="text-gray-500 hover:text-gray-300 text-sm transition"
+              className="text-blue-700 hover:text-blue-900 text-sm transition"
             >
               Cookie Policy
             </Link>
