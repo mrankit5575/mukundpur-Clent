@@ -5,11 +5,32 @@ import BookCard from './BookCard';
 import { motion } from 'framer-motion';
 import { FaExchangeAlt, FaSearch, FaFilter } from 'react-icons/fa';
 import Link from 'next/link';
+import Head from 'next/head';
+
 
 export default function BookList() {
   const previewBooks = books.slice(0, 8); // Show 8 books
 
   return (
+
+        <>
+        <Head>
+        <title>Old Books | CrackIQ</title>
+        <meta
+          name="description"
+          content="Buy or donate old competitive exam books at CrackIQ. Access quality books at lower prices for smarter exam preparation."
+        />
+        <meta name="keywords" content="old books, used books, donate books, cheap exam books, CrackIQ books" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.crackiq.in/old-books" />
+
+        {/* Open Graph / Social Meta */}
+        <meta property="og:title" content="Old Books - CrackIQ" />
+        <meta property="og:description" content="Buy, sell, or donate old exam books. Make exam prep affordable for everyone." />
+        <meta property="og:image" content="https://www.crackiq.in/books-og.jpg" />
+        <meta property="og:url" content="https://www.crackiq.in/old-books" />
+        <meta property="og:type" content="website" />
+      </Head>
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -17,7 +38,7 @@ export default function BookList() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
-        >
+          >
           <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full mb-4">
             <FaExchangeAlt className="mr-2" />
             <span className="font-medium">Buy & Sell Pre-Loved Books</span>
@@ -47,7 +68,7 @@ export default function BookList() {
                 type="text"
                 placeholder="Search by book title, subject, or class..."
                 className="pl-10 pr-4 py-3 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
+                />
             </div>
             <div className="flex gap-2 w-full md:w-auto">
               <select className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full md:w-auto">
@@ -95,7 +116,7 @@ export default function BookList() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
+          >
           {previewBooks.map((book, index) => (
             <BookCard key={book.id} book={book} index={index} />
           ))}
@@ -107,13 +128,13 @@ export default function BookList() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
           className="mt-10 text-center"
-        >
+          >
           <Link href="/all-books">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-semibold shadow-lg hover:bg-blue-50 transition-colors"
-            >
+              >
               View All Books ({books.length})
             </motion.button>
           </Link>
@@ -125,7 +146,7 @@ export default function BookList() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           className="mt-16 text-center"
-        >
+          >
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             Have books to sell?
           </h3>
@@ -133,23 +154,21 @@ export default function BookList() {
             List your books in just 2 minutes and connect with buyers in your area.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/sellbook">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all"
-            >
+              >
               Sell Your Books Now
             </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all"
-            >
-              How It Works
-            </motion.button>
+              </Link>
+
+             
           </div>
         </motion.div>
       </div>
     </section>
+                </>
   );
 }

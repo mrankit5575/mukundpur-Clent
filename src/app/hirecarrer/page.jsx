@@ -1,12 +1,15 @@
-import TutorsSection from '@/components/TutorSection'
+ import TeacherList from '@/Teacher/TeacherList'
 import React from 'react'
-
-function page() {
-  return (
-    <div className=''>
-        <TutorsSection className="mt-20"/>
+ 
+ function page() {
+   return (
+    <div className='fixed '>
+     <div className='mt-20' >
+       <TeacherList/>
      </div>
-  )
-}
-
-export default page
+    </div>
+   )
+ }
+ 
+ export default page
+ 

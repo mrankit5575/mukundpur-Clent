@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FiSearch, FiStar, FiBook, FiFilter, FiMessageSquare, FiUser } from "react-icons/fi";
 import axios from "axios";
 import Link from "next/link";
+import Head from 'next/head';
 
 const MotionLink = motion(Link);
 
@@ -58,6 +59,24 @@ const TutorsSection = () => {
   }, [selectedSubject, selectedClass, searchQuery]);
 
   return (
+    <>
+    <Head>
+        <title>Home Tutor Services | CrackIQ</title>
+        <meta
+          name="description"
+          content="Find qualified home tutors for SSC, UPSC, Banking and school subjects. CrackIQ helps students get 1-on-1 personalized guidance."
+        />
+        <meta name="keywords" content="home tutor, personal tutor, CrackIQ tutor, SSC UPSC tuition, banking exam coaching" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.crackiq.in/home-tutor" />
+
+        {/* Open Graph / Social Meta */}
+        <meta property="og:title" content="Home Tutors - CrackIQ" />
+        <meta property="og:description" content="Book experienced home tutors for competitive exam preparation and school subjects." />
+        <meta property="og:image" content="https://www.crackiq.in/tutor-og.jpg" />
+        <meta property="og:url" content="https://www.crackiq.in/home-tutor" />
+        <meta property="og:type" content="website" />
+      </Head>
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -153,7 +172,7 @@ const TutorsSection = () => {
           </div>
         ) : (
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
@@ -207,7 +226,7 @@ const TutorsSection = () => {
                     <div className="mt-2 flex flex-wrap gap-2">
                       {tutor.subjects.slice(0, 3).map((subj, i) => (
                         <span 
-                          key={i} 
+                        key={i} 
                           className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
                         >
                           {subj}
@@ -250,7 +269,7 @@ const TutorsSection = () => {
                   <Link
                     href={`/book-session/${tutor._id}`}
                     className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
-                  >
+                    >
                     <FiMessageSquare className="mr-2" />
                     Book Session
                   </Link>
@@ -261,6 +280,7 @@ const TutorsSection = () => {
         )}
       </div>
     </section>
+                    </>
   );
 };
 

@@ -4,6 +4,7 @@
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const blogPosts = [
   {
@@ -47,10 +48,24 @@ const blogPosts = [
 const BlogPage = () => {
   return (
     <>
-      <Head>
-        <title>EduBlog - Study Tips & Learning Strategies</title>
-        <meta name="description" content="Discover effective study techniques and how technology can enhance your learning experience." />
+       <Head>
+        <title>Blog | CrackIQ - Latest Exam Tips & Study Guides</title>
+        <meta
+          name="description"
+          content="Read expert blogs on UPSC, SSC, Banking and more. Get study tips, preparation strategies, syllabus updates and career guidance from CrackIQ."
+        />
+        <meta name="keywords" content="crackiq blog, upsc tips, ssc preparation, banking exams, study hacks, syllabus update" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.crackiq.in/blog" />
+
+        {/* Open Graph Meta */}
+        <meta property="og:title" content="CrackIQ Blog" />
+        <meta property="og:description" content="Latest updates, tips and strategies for government exams and competitive prep." />
+        <meta property="og:image" content="https://www.crackiq.in/blog-og.jpg" />
+        <meta property="og:url" content="https://www.crackiq.in/blog" />
+        <meta property="og:type" content="website" />
       </Head>
+
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8 ">
         <motion.div

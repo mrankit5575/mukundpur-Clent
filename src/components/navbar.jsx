@@ -32,7 +32,7 @@ const Navbar = () => {
       subItems: [
         { name: 'Hire a Tutor', href: '/hirecarrer' },
         { name: 'Become a Tutor', href: '/becomeTutor' },
-        { name: 'Tutor Rates', href: '/tutors/rates' },
+        // { name: 'Tutor Rates', href: '/tutors/rates' }, 
       ],
     },
     {
@@ -41,12 +41,12 @@ const Navbar = () => {
       href: '/materials',
       subItems: [
         { name: 'Class 6', href: '/study/class6' },
-        { name: 'Class 7', href: '/materials/6-8' },
-        { name: 'Class 8', href: '/materials/6-8' },
-        { name: 'Class 9', href: '/materials/9-10' },
-        { name: 'Class 10', href: '/materials/10' },
-        { name: 'Class 11', href: '/materials/10' },
-        { name: 'Class 12', href: '/materials/10' },
+        { name: 'Class 7', href: '/study/class7' },
+        { name: 'Class 8', href: '/study/class8' },
+        { name: 'Class 9', href: '/study/class9' },
+        { name: 'Class 10', href: '/study/class10' },
+        { name: 'Class 11', href: '/study/class11' },
+        { name: 'Class 12', href: '/study/class12' },
       ],
     },
     {
@@ -56,7 +56,7 @@ const Navbar = () => {
       subItems: [
         { name: 'Buy Books', href: '/buybook' },
         { name: 'Sell Books', href: '/sellbook' },
-        { name: 'Exchange Books', href: '/books/exchange' },
+        // { name: 'Exchange Books', href: '/books/exchange' },
       ],
     },
     {

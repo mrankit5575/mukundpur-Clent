@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiFolder, FiBookOpen, FiArrowRight } from "react-icons/fi";
+import Head from 'next/head';
 
 const StudyMaterialSection = () => {
   const grades = [
@@ -30,6 +31,24 @@ const StudyMaterialSection = () => {
   ];
 
   return (
+    <>
+     <Head>
+        <title>Study Material | CrackIQ</title>
+        <meta
+          name="description"
+          content="Free and premium study materials for SSC, UPSC, Banking, Railway and other competitive exams. Download notes, PDFs, syllabus and practice sets."
+        />
+        <meta name="keywords" content="study material, free notes, exam pdfs, ssc material, upsc notes, crackiq" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.crackiq.in/study-material" />
+
+        {/* Open Graph Meta */}
+        <meta property="og:title" content="Study Material - CrackIQ" />
+        <meta property="og:description" content="Access quality study notes, PDFs, and syllabus for all competitive exams." />
+        <meta property="og:image" content="https://www.crackiq.in/study-og.jpg" />
+        <meta property="og:url" content="https://www.crackiq.in/study-material" />
+        <meta property="og:type" content="website" />
+      </Head>
     <section id="teachers" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -39,7 +58,7 @@ const StudyMaterialSection = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-16"
-        >
+          >
           <h2 className="text-3xl md:text-4xl font-bold text-[#0c0950] mb-4">
             Comprehensive <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">Study Materials</span>
           </h2>
@@ -81,7 +100,7 @@ const StudyMaterialSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
           className="mb-16"
-        >
+          >
           <h3 className="text-xl font-semibold text-[#0c0950] mb-6 flex items-center">
             <FiBookOpen className="mr-2" /> Competitive Exams
           </h3>
@@ -91,7 +110,7 @@ const StudyMaterialSection = () => {
                 <Link
                   href={exam.path}
                   className={`${exam.color} ${exam.hover} rounded-xl p-6 shadow-lg transition-all duration-300 flex items-center justify-between cursor-pointer`}
-                >
+                  >
                   <div>
                     <h4 className="font-bold text-lg text-gray-800">{exam.name}</h4>
                     <p className="text-sm text-gray-600 mt-1">
@@ -111,7 +130,7 @@ const StudyMaterialSection = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           viewport={{ once: true }}
-        >
+          >
           <h3 className="text-xl font-semibold text-[#0c0950] mb-6 flex items-center">
             <FiBookOpen className="mr-2" /> Browse by Subject
           </h3>
@@ -140,25 +159,11 @@ const StudyMaterialSection = () => {
           viewport={{ once: true }}
           className="mt-16 bg-[#0c0950] rounded-2xl p-8 text-white"
         >
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-6 md:mb-0 md:mr-8">
-              <h3 className="text-2xl font-bold mb-3">Premium Study Packages</h3>
-              <p className="text-blue-100 max-w-lg">
-                Access our exclusive collection of solved papers, concept videos, and mock tests crafted by top educators.
-              </p>
-            </div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                href="/premium"
-                className="bg-white text-[#0c0950] px-6 py-3 rounded-lg font-semibold shadow-lg flex items-center gap-2 whitespace-nowrap"
-              >
-                Explore Premium <FiArrowRight />
-              </Link>
-            </motion.div>
-          </div>
+           
         </motion.div>
       </div>
     </section>
+                </>
   );
 };
 

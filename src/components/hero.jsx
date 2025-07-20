@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import dynamic from 'next/dynamic';
+import Link from "next/link";
 
 // Dynamically import Player with SSR disabled
 const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod => mod.Player), {
@@ -12,13 +13,29 @@ const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod
 export default function HeroSection() {
   return (
     <>
+      
+        {/* ✅ SEO Meta Tags */}
       <Head>
+        <title>CrackIQ | Learn Smarter, Rank Higher</title>
+        <meta name="description" content="Prepare for competitive exams with CrackIQ's smart tools and mock tests." />
+        <meta name="keywords" content="exam preparation, mock tests, CrackIQ, online learning" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.crackiq.in/" />
+
+        {/* ✅ Open Graph / Social Sharing */}
+        <meta property="og:title" content="CrackIQ - Smarter Exam Preparation" />
+        <meta property="og:description" content="Join CrackIQ to crack exams with mock tests, notes, and AI-powered prep." />
+        <meta property="og:image" content="https://www.crackiq.in/og-image.jpg" />
+        <meta property="og:url" content="https://www.crackiq.in/" />
+        <meta property="og:type" content="website" />
+
+
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </Head>
-
+       
       <section className="min-h-[90vh] flex items-center bg-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Background circles */}
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -139,12 +156,14 @@ export default function HeroSection() {
                   </div>
                   <div>
                     <p className="font-semibold text-[#0c0950]">Live Quiz: Class 12 Physics</p>
-                    <p className="text-sm text-[#0c0950]/80">Starts in 15 minutes</p>
+                    <p className="text-sm text-[#0c0950]/80">Comming Soon</p>
                   </div>
                 </div>
+                <Link href='/quiz'>
                 <button className="px-4 py-2 bg-[#0c0950] text-white rounded-lg text-sm font-semibold hover:bg-blue-900">
                   Join Now
                 </button>
+                </Link>
               </div>
             </motion.div>
           </motion.div>
