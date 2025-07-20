@@ -12,13 +12,13 @@ export default function AboutPage() {
         <meta name="description" content="Learn more about CrackIQ — our mission, our team, and how we help students succeed." />
         <meta name="keywords" content="about CrackIQ, our team, CrackIQ mission, exam prep" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.crackiq.in/about" />
+        <link rel="canonical" href="https://www.crackiq.in/aboutus" />
 
         {/* Open Graph */}
         <meta property="og:title" content="About CrackIQ" />
         <meta property="og:description" content="Know the story behind CrackIQ and how we support students in competitive exam prep." />
         <meta property="og:image" content="https://www.crackiq.in/about-og.jpg" />
-        <meta property="og:url" content="https://www.crackiq.in/about" />
+        <meta property="og:url" content="https://www.crackiq.in/aboutus" />
         <meta property="og:type" content="website" />
 
       </Head>
