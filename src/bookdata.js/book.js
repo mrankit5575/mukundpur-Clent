@@ -41,5 +41,27 @@ export const books = [
       views: 89,
       sellerRating: 4.9,
       postedDate: "2023-06-10"
+    },
+    {
+      id: "book003",
+      title: "Chemistry Class 12 - Part 1",
+      description: "NCERT Chemistry Part 2 for Class 12 CBSE. No markings, very clean pages. Ideal for board exam prep.",
+      subject: "Chemistry",
+      classLevel: "Class 12",
+      condition: "Good",
+      price: 150,
+      originalPrice: 350,
+      photos: [
+        "/book/img2.jpg",  // You can change the filenames if your actual images differ
+        "/book/img.jpg",  // You can change the filenames if your actual images differ
+        "/book/img1.jpg",  // You can change the filenames if your actual images differ
+        "/book/img3.jpg",  // You can change the filenames if your actual images differ
+       ],
+      whatsappNumber: "6540527688",  // Same number; change if needed
+      location: "Mukund Pur Delhi",
+      views: 23,
+      sellerRating: 4.7,
+      postedDate: "2025-07-19"
     }
+    
   ];

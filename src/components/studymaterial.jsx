@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiFolder, FiBookOpen, FiArrowRight } from "react-icons/fi";
 import Head from 'next/head';
+import TopperHighlight from "@/hooks/TopperHighlight";
 
 const StudyMaterialSection = () => {
   const grades = [
@@ -159,6 +160,7 @@ const StudyMaterialSection = () => {
           viewport={{ once: true }}
           className="mt-16 bg-[#0c0950] rounded-2xl p-8 text-white"
         >
+          <TopperHighlight/>
            
         </motion.div>
       </div>

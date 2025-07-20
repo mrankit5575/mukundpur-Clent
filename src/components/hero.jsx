@@ -61,18 +61,25 @@ export default function HeroSection() {
               <p className="text-sm font-medium text-[#0c0950]">India's Premier Education Platform</p>
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0c0950] to-blue-700">
-                Transform Learning
-              </span><br />
-              <span className="text-[#0c0950]">With Verified Tutors & Premium Resources</span>
-            </h1>
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight">
+  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0c0950] to-blue-700">
+    Buy & Sell Old Books, Hire Top Tutors
+  </span><br />
+  <span className="text-[#0c0950]">Notes, Materials, Everything in One Place</span>
+</h1>
 
-            <p className="text-lg text-[#0c0950]/80 max-w-lg">
-              The complete ecosystem for students - hire top tutors, access curated study materials, 
-              participate in competitive quizzes, and manage your academic journey.
-            </p>
+<p className="text-lg text-[#0c0950]/80 max-w-lg mt-4">
+  India’s smartest educational platform for students of Class 6–12. Sell your old books, connect with verified tutors, download handwritten notes, and study smarter — all in one place.
+</p>
 
+            <div className="block lg:hidden pt-6">
+              <Player
+                autoplay
+                loop
+                src="/animation3.json"
+                className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md mx-auto drop-shadow-2xl"
+              />
+            </div>
             <div className="flex flex-wrap gap-4">
               <motion.button
               onClick={() => {
@@ -106,14 +113,7 @@ export default function HeroSection() {
             </div>
 
             {/* 👇 Mobile-only Lottie after buttons */}
-            <div className="block lg:hidden pt-6">
-              <Player
-                autoplay
-                loop
-                src="/animation3.json"
-                className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md mx-auto drop-shadow-2xl"
-              />
-            </div>
+            
 
             {/* Features Grid */}
             <motion.div
