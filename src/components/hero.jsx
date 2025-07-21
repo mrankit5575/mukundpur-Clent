@@ -16,25 +16,21 @@ export default function HeroSection() {
       
         {/* ✅ SEO Meta Tags */}
       <Head>
-        <title>CrackIQ | Learn Smarter, Rank Higher</title>
-        <meta name="description" content="Prepare for competitive exams with CrackIQ's smart tools and mock tests." />
-        <meta name="keywords" content="exam preparation, mock tests, CrackIQ, online learning" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.crackiq.in/" />
+    <title>CrackIQ | Learn Smarter, Rank Higher - JEE, NEET, CBSE & Competitive Exams</title>
+    <meta name="description" content="Best online learning platform for 6th-12th Science/Commerce, JEE, NEET, CUET & Computer Science. Get NCERT solutions, mock tests, AI-powered practice & expert guidance." />
+    <meta name="keywords" content="CrackIQ, Crack IQ, JEE preparation, NEET coaching, CBSE Class 6-12, Science notes, Commerce study material, Computer Science learning, NCERT solutions, mock tests for JEE, NEET online coaching, CUET preparation, competitive exam practice, AI learning for students, CBSE board exam tips, PCMB study guide, coding for students" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.crackiq.in/" />
 
-        {/* ✅ Open Graph / Social Sharing */}
-        <meta property="og:title" content="CrackIQ - Smarter Exam Preparation" />
-        <meta property="og:description" content="Join CrackIQ to crack exams with mock tests, notes, and AI-powered prep." />
-        <meta property="og:image" content="https://www.crackiq.in/og-image.jpg" />
-        <meta property="og:url" content="https://www.crackiq.in/" />
-        <meta property="og:type" content="website" />
+    {/* Open Graph / Social Sharing */}
+    <meta property="og:title" content="CrackIQ - Top JEE, NEET & CBSE 6th-12th Online Learning" />
+    <meta property="og:description" content="Ace JEE, NEET, CBSE & Computer Science with CrackIQ’s smart mock tests, NCERT solutions & AI-powered learning for Class 6-12 Science/Commerce students." />
+    <meta property="og:image" content="https://www.crackiq.in/logo.jpg  " />
+    <meta property="og:url" content="https://www.crackiq.in/" />
+    <meta property="og:type" content="website" />
 
-
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</Head>
        
       <section className="min-h-[90vh] flex items-center bg-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Background circles */}

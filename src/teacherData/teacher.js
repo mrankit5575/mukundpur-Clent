@@ -59,5 +59,32 @@ export const tutors = [
     rating: 4.9,
     reviews: 12,
     bookingLink: "https://yourwebsite.com/book/rahul"
-  }
+  },
+  {
+  id: "tutor003",
+  name: "Nikhil",
+  gender: "Male",
+  age: 21,
+  photo: "/nikhli.jpg", // Make sure this image exists in your public folder
+  qualification: "B.Sc 2nd Year (IGNOU)",
+  experience: 3.5,
+  subjects: [
+    "Biology",
+    "Chemistry"
+  ],
+  grades: ["9", "10", "11", "12"],
+  location: "Delhi",
+  mode: ["Online", "Offline"],
+  languages: ["Hindi", "English"],
+  rate: "contact",
+  availability: {
+    days: ["Tue", "Thu", "Sat"],
+    time: ["5PM-7PM", "8PM-9PM"]
+  },
+  bio: "Nikhil is a passionate B.Sc student at IGNOU, currently in his second year. With 3.5 years of teaching experience, he specializes in Biology and Chemistry for high school students. His methodical teaching style and deep understanding of the subjects have helped numerous students grasp tough concepts and perform excellently in their board and entrance exams.",
+  rating: 4.6,
+  reviews: 17,
+  bookingLink: "https://yourwebsite.com/book/nikhil"
+}
+
 ];

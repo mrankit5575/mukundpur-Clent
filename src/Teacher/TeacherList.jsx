@@ -25,6 +25,7 @@ export default function TeacherList() {
           ))}
         </div>
       </div>
+      
     </section>
   );
 }

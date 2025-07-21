@@ -10,7 +10,7 @@ export const metadata = {
     siteName: 'CrackIQ',
     images: [
       {
-        url: 'https://www.crackiq.in/og-image.jpg', // 🖼️ Replace with your OG image URL
+        url: 'https://www.crackiq.in/logo.png', // 🖼️ Replace with your OG image URL
         width: 1200,
         height: 630,
         alt: 'CrackIQ Learning Banner',

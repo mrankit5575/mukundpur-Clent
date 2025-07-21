@@ -1,5 +1,7 @@
+ 
 export default function TeacherProfile({ tutor }) {
   return (
+      <>
     <div style={{ padding: '2rem' }}>
       <h1>{tutor.name}</h1>
       <img src={tutor.photo} alt={tutor.name} style={{ width: '200px' }} />
@@ -10,5 +12,7 @@ export default function TeacherProfile({ tutor }) {
       <p><strong>Hourly Rate:</strong> ₹{tutor.rate}</p>
       <p>{tutor.bio}</p>
     </div>
+    {/* <TeacherList/> */}
+      </>
   );
 }

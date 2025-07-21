@@ -102,7 +102,7 @@ export default function AboutPage() {
       viewport={{ once: true }}
       className="text-4xl font-bold text-center text-gray-800 mb-16"
     >
-      Meet Our <span className="text-[#261FB3]">Visionary</span> Founders
+      Meet Our <span className="text-[#261FB3]">Visionary</span> Community Builder
     </motion.h2>
     
     <div className="grid md:grid-cols-2 gap-16">
@@ -118,7 +118,7 @@ export default function AboutPage() {
           <div className="relative w-full md:w-1/3 h-64 md:h-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-[#261FB3] to-[#0C0950] opacity-20"></div>
             <Image
-              src="/ankit.jpg"
+              src="/ankit1.jpg"
               alt="Ankit Singh"
               fill
               className="object-cover"
@@ -135,13 +135,13 @@ export default function AboutPage() {
             </div>
             <p className="text-[#261FB3] font-medium mb-4">Tech Visionary & Developer</p>
             <p className="text-gray-600 mb-6">
-              A passionate student from Mukundpur, Delhi, revolutionizing education through innovative technology solutions.
-            </p>
+            “Bringing tech into teaching — building smarter ways to learn.”
+
+
+             </p>
             
             <div className="border-l-4 border-[#261FB3] pl-4 mb-6">
-              <p className="italic text-gray-700">
-                "Dream big and dare to fail, because great things never come from comfort zones."
-              </p>
+              
             </div>
 
             <div className="flex space-x-4">
@@ -212,13 +212,11 @@ export default function AboutPage() {
             </div>
             <p className="text-[#261FB3] font-medium mb-4">Design Innovator</p>
             <p className="text-gray-600 mb-6">
-              A creative visionary from Delhi, crafting intuitive educational platforms that bridge the gap between students and resources.
-            </p>
+            Where ideas meet execution — with a creative edge
+             </p>
             
             <div className="border-l-4 border-[#0C0950] pl-4 mb-6">
-              <p className="italic text-gray-700">
-                "Design is not just what it looks like, it's how it works to solve real problems."
-              </p>
+              
             </div>
 
             <div className="flex space-x-4">
@@ -297,21 +295,14 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <motion.a
-              href="/sell"
+              href="/buybook"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-[#261FB3] text-white font-medium rounded-lg shadow-lg hover:bg-[#0C0950]"
             >
               Sell Your Books
             </motion.a>
-            <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-white text-[#261FB3] font-medium rounded-lg shadow-lg border border-[#261FB3] hover:bg-gray-50"
-            >
-              Contact Us
-            </motion.a>
+             
           </div>
         </div>
       </section>

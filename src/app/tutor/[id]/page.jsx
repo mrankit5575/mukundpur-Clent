@@ -5,6 +5,7 @@ import { tutors } from '@/teacherData/teacher';
 import { FaChalkboardTeacher, FaGraduationCap, FaMapMarkerAlt, FaRupeeSign, FaStar, FaBook } from 'react-icons/fa';
 import { IoTime } from 'react-icons/io5';
 import { use } from 'react'; // ✅ at the top
+import TeacherList from "@/Teacher/TeacherList";
 
 export default function TutorProfilePage({ params }) {
   // const { id } = params;
@@ -231,6 +232,7 @@ export default function TutorProfilePage({ params }) {
           </div>
         </motion.div>
       </motion.div>
+      
     </div>
   );
 }
