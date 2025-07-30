@@ -95,6 +95,7 @@ const SubjectPage = ({ params }) => {
               <h2 className="text-xl font-bold mb-4 text-blue-800">Previous Year Questions (PYQs)</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {Object.entries(resources.pyq).map(([year, url]) => {
+                  if (!url) return null
                   const previewUrl = getPreviewUrl(url)
                   return (
                     <div key={year} className="border p-4 rounded-lg bg-blue-50">
@@ -114,7 +115,7 @@ const SubjectPage = ({ params }) => {
             </motion.div>
           )}
 
-          {/* Other Resources */}
+          {/* Static Resources */}
           {["ncert", "samplePaper", "summary", "notes", "mindmap"].map((key) => {
             const labelMap = {
               ncert: "NCERT Book",
@@ -154,6 +155,31 @@ const SubjectPage = ({ params }) => {
               </motion.div>
             )
           })}
+
+          {/* Chapter-Wise Notes */}
+          {resources?.chapterNotes && (
+            <motion.div variants={itemVariants} className="bg-white rounded-xl p-6 border">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">Chapter-wise Notes</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {Object.entries(resources.chapterNotes).map(([chapter, url]) => {
+                  const previewUrl = getPreviewUrl(url)
+                  return (
+                    <div key={chapter} className="bg-blue-50 p-4 rounded-lg border">
+                      <p className="font-medium text-blue-700">{chapter}</p>
+                      <div className="flex gap-2 mt-2">
+                        <a href={previewUrl} target="_blank" rel="noreferrer" className="flex items-center text-sm text-blue-600 hover:underline">
+                          <FiExternalLink className="mr-1" /> View
+                        </a>
+                        <a href={url} download className="flex items-center text-sm text-green-600 hover:underline">
+                          <FiDownload className="mr-1" /> Download
+                        </a>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </div>

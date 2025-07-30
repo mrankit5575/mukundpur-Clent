@@ -10,7 +10,7 @@ export const metadata = {
     siteName: 'CrackIQ',
     images: [
       {
-        url: 'https://www.crackiq.in/logo.png', // 🖼️ Replace with your OG image URL
+        url: 'https://www.crackiq.in/logo.png',
         width: 1200,
         height: 630,
         alt: 'CrackIQ Learning Banner',
@@ -32,20 +32,23 @@ import StatsSection from '@/components/satsSection';
 import StudyMaterialSection from '@/components/studymaterial';
 import TeacherList from '@/Teacher/TeacherList';
 import BookList from '@/bookdata.js/BookList';
-// import BooksPage from '@/hooks/books'
-
-function page() {
+// import ChatPage from '@/components/FloatingAssistant';
+  
+export default function Page() {
   return (
     <>
       <Navbar />
       <HeroSection />
       <StudyMaterialSection />
       <BookList />
-      {/* <BooksPage /> */}
       <TeacherList />
+
+      {/* 👇 This section acts as the trigger */}
+      {/* <ChatPage/> */}
+
       <StatsSection />
-    </>
+
+
+     </>
   );
 }
-
-export default page;

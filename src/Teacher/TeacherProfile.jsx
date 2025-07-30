@@ -1,4 +1,3 @@
- 
 export default function TeacherProfile({ tutor }) {
   return (
       <>
@@ -12,7 +11,7 @@ export default function TeacherProfile({ tutor }) {
       <p><strong>Hourly Rate:</strong> ₹{tutor.rate}</p>
       <p>{tutor.bio}</p>
     </div>
-    {/* <TeacherList/> */}
+    
       </>
   );
 }
