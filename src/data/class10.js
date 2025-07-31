@@ -19,7 +19,7 @@
         ncert: "https://ncert.nic.in/textbook.php?jesc1=0-13",
         summary: "https://drive.google.com/summary-link",
         notes: "https://drive.google.com/notes-link",
-        mindmap: "https://drive.google.com/mindmap-link",
+        mindmap: "https://drive.google.com/file/d/1vbSOi7BnmC9LQwI8ozUixqlG7P63_9vL/view?usp=sharing",
         chapterNotes: {
           "Chemical Reactions and Equations": "https://drive.google.com/file/d/1ULl2AxYydUuF99soNQdo-_PQaU9BNvax/view?usp=sharing",
           "Acids, Bases and Salts": "https://drive.google.com/file/d/1O18bbtYo5Xi8sndLKiJWp885Bt0emD3B/view?usp=sharing",
@@ -59,29 +59,32 @@
           "2025 Standard Set-2 Code-(1)": "https://drive.google.com/file/d/1AOZnDDm0Lyxd0WTlkUzijMllAPd7LZcV/view?usp=sharing",
           "2025 Standard Set-3 Code-(1)": "https://drive.google.com/file/d/1XOC6dXxD4yh0QcuKo3V40eqcOHkoFWAy/view?usp=sharing",
           "2025 Standard Set-4 Code-(1)": "https://drive.google.com/file/d/1MhdmEIW6KE8eZWzBDSadqSISGPUYte_0/view?usp=sharing",
-          "2025 Standard Set-5 Code-(1)": "https://drive.google.com/file/d/1sTuA-uATs9tc58LNlm4PbFMPN3NKc43z/view?usp=sharing"
+          "2025 Standard Set-5 Code-(1)": "https://drive.google.com/file/d/1sTuA-uATs9tc58LNlm4PbFMPN3NKc43z/view?usp=sharing",
+          // "Last Time Revision Notes": "https://drive.google.com/file/d/1sTuA-uATs9tc58LNlm4PbFMPN3NKc43z/view?usp=sharing"
         },
         samplePaper: "https://cbseacademic.nic.in/web_material/SQP/ClassX_2024_25/MathsStandard-SQP.pdf",
         ncert: "https://ncert.nic.in/textbook.php?jemh1=1-15",
         summary: "https://drive.google.com/summary-math",
         notes: "https://drive.google.com/notes-math",
-        mindmap: "https://drive.google.com/mindmap-math",
+        // mindmap: "",
+                mindmap: "https://drive.google.com/file/d/1vbSOi7BnmC9LQwI8ozUixqlG7P63_9vL/view?usp=sharing",
+
         chapterNotes: {
-          "Real Numbers": "https://drive.google.com/notes-math-ch1",
-          "Polynomials": "https://drive.google.com/notes-math-ch2",
-          "Pair of Linear Equations in Two Variables": "https://drive.google.com/notes-math-ch3",
-          "Quadratic Equations": "https://drive.google.com/notes-math-ch4",
-          "Arithmetic Progressions": "https://drive.google.com/notes-math-ch5",
-          "Triangles": "https://drive.google.com/notes-math-ch6",
-          "Coordinate Geometry": "https://drive.google.com/notes-math-ch7",
-          "Introduction to Trigonometry": "https://drive.google.com/notes-math-ch8",
-          "Some Applications of Trigonometry": "https://drive.google.com/notes-math-ch9",
-          "Circles": "https://drive.google.com/notes-math-ch10",
-          "Constructions": "https://drive.google.com/notes-math-ch11",
-          "Areas Related to Circles": "https://drive.google.com/notes-math-ch12",
-          "Surface Areas and Volumes": "https://drive.google.com/notes-math-ch13",
-          "Statistics": "https://drive.google.com/notes-math-ch14",
-          "Probability": "https://drive.google.com/notes-math-ch15"
+          "Real Numbers": "https://drive.google.com/file/d/1kEak85beUGMyTZJxlUiJ05S3RLBshb0Q/view?usp=drive_link",
+          "Polynomials": "https://drive.google.com/file/d/1jle2eD2g8D8ttr3FVPwIrt2_SMFvLGhf/view?usp=drive_link",
+          "Pair of Linear Equations in Two Variables": "https://drive.google.com/file/d/1dux7bJS3qnZYU8tmTCkiguRRuZ5qhTe2/view?usp=drive_link",
+          "Quadratic Equations": "https://drive.google.com/file/d/18oZ_nd8i6BoeSNnNJHiOlxwinb2t86PH/view?usp=drive_link",
+          "Arithmetic Progressions": "https://drive.google.com/file/d/1gM24ZfH6ADkJrU14K2sqNQDoG9_a7_8N/view?usp=sharing",
+          "Triangles": "https://drive.google.com/file/d/1i2ja8rbSW9zamJf2fLsls1MIW0FyzFX3/view?usp=drive_link",
+          "Coordinate Geometry": "https://drive.google.com/file/d/1YvIJarPD9Lp_OT5o1g0aT_XKZz3xMbw-/view?usp=drive_link",
+          "Introduction to Trigonometry": "https://drive.google.com/file/d/1CCsDI_MPC1gHRemMFSivTJwAnfDQy1EU/view?usp=drive_link",
+          "Some Applications of Trigonometry": "https://drive.google.com/file/d/1o0wtTVSK95F9y3zD56cuVW24-LdaXYfZ/view?usp=drive_link",
+          "Circles": "https://drive.google.com/file/d/1VkwZgNmAFQ3gEU1ZJh-R2SO6AUK_Bbzt/view?usp=drive_link",
+          "Constructions": "https://drive.google.com/file/d/1slkdKXV6W1YST4MAv9-_9LytwxyP-ukX/view?usp=drive_link",
+          "Areas Related to Circles": "https://drive.google.com/file/d/1SotCv3YRHiXGKy7VWEz35L6Gj0T-1JTR/view?usp=sharing",
+          "Surface Areas and Volumes": "https://drive.google.com/file/d/1EYzWjntMANSjtyn_0ofRBh_pKlmU6jZT/view?usp=drive_link",
+          "Statistics": "https://drive.google.com/file/d/1ALNl5N2FhH1Tzse7BGYOC7DJsaj1Yp3n/view?usp=drive_link",
+          "Probability": "https://drive.google.com/file/d/1DhmxxlTOxm-h6gRBdI_VPF_GCN5UljjC/view?usp=drive_link"
         }
       }
     },
