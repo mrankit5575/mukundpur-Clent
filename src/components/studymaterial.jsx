@@ -28,7 +28,7 @@ const StudyMaterialSection = () => {
     { name: "Social Studies", icon: "🌍", path: "/study-material/subject/social-studies" },
     { name: "English", icon: "📖", path: "/study-material/subject/english" },
     { name: "Hindi", icon: "🖋️", path: "/study-material/subject/hindi" },
-    { name: "Computer Science", icon: "💻", path: "/study-material/subject/computer-science" },
+    { name: "Computer Science", icon: "💻", path: "/webdev" },
   ];
 
   return (
