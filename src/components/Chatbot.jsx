@@ -16,8 +16,8 @@ export default function Chatbot() {
   const sendMessage = async () => {
     if (!input.trim() || isLoading) return;
 
-    const newMessages = [...messages, { from: "user", text: input }];
-    setMessages(newMessages);
+    const userMessage = { from: "user", text: input };
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
 
@@ -29,12 +29,39 @@ export default function Chatbot() {
       });
       const data = await res.json();
 
-      setMessages((prev) => [...prev, { from: "bot", text: data.answer || "I'm not sure about that. Could you ask differently?" }]);
+      const botText = data.answer || "I'm not sure about that. Could you ask differently?";
+      await typeBotMessage(botText);
     } catch (error) {
-      setMessages((prev) => [...prev, { from: "bot", text: "I'm having trouble connecting. Please try again later." }]);
+      await typeBotMessage("I'm having trouble connecting. Please try again later.");
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const typeBotMessage = async (text) => {
+    let currentText = "";
+    for (let i = 0; i < text.length; i++) {
+      currentText += text[i];
+      setMessages((prev) => {
+        const newMessages = [...prev];
+        // If last message is bot, update it; else add new
+        if (newMessages[newMessages.length - 1].from === "bot" && newMessages[newMessages.length - 1].typing) {
+          newMessages[newMessages.length - 1].text = currentText;
+        } else {
+          newMessages.push({ from: "bot", text: currentText, typing: true });
+        }
+        return newMessages;
+      });
+      await new Promise((res) => setTimeout(res, 25)); // typing speed
+    }
+    // remove typing flag
+    setMessages((prev) => {
+      const newMessages = [...prev];
+      if (newMessages[newMessages.length - 1].from === "bot") {
+        delete newMessages[newMessages.length - 1].typing;
+      }
+      return newMessages;
+    });
   };
 
   useEffect(() => {
@@ -49,9 +76,9 @@ export default function Chatbot() {
   };
 
   const chatVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.9 },
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
     visible: { opacity: 1, y: 0, scale: 1 },
-    exit: { opacity: 0, y: 20, scale: 0.9 },
+    exit: { opacity: 0, y: 20, scale: 0.95 },
   };
 
   return (
@@ -66,25 +93,22 @@ export default function Chatbot() {
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
             className="w-80 h-[28rem] bg-white rounded-xl shadow-xl overflow-hidden flex flex-col border border-gray-200"
           >
+            {/* Header */}
             <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 text-white font-semibold flex justify-between items-center">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
-                  </svg>
+                  <img src="/logo.png" alt="Bot Logo" className="w-5 h-5" />
                 </div>
                 <span>CrackIQ Assistant</span>
               </div>
-              <button 
-                onClick={toggleChat}
-                className="text-white hover:text-gray-200 focus:outline-none"
-              >
+              <button onClick={toggleChat} className="text-white hover:text-gray-200 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
             </div>
 
+            {/* Chat messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
               {messages.map((msg, i) => (
                 <motion.div
@@ -94,6 +118,12 @@ export default function Chatbot() {
                   transition={{ duration: 0.2 }}
                   className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}
                 >
+                  {msg.from === "bot" && (
+                    <img src="/logo.png" alt="Bot Logo" className="w-6 h-6 rounded-full mr-2" />
+                  )}
+                  {msg.from === "user" && (
+                    <img src="/logo.png" alt="User Logo" className="w-6 h-6 rounded-full ml-2" />
+                  )}
                   <div
                     className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${msg.from === "user" 
                       ? "bg-indigo-600 text-white rounded-br-none" 
@@ -117,6 +147,7 @@ export default function Chatbot() {
               <div ref={messagesEndRef} />
             </div>
 
+            {/* Input */}
             <div className="border-t border-gray-200 p-3 bg-white">
               <div className="relative">
                 <textarea
@@ -145,6 +176,7 @@ export default function Chatbot() {
         )}
       </AnimatePresence>
 
+      {/* Floating button */}
       <motion.button
         onClick={toggleChat}
         whileHover={{ scale: 1.1 }}
@@ -171,3 +203,4 @@ export default function Chatbot() {
     </div>
   );
 }
+

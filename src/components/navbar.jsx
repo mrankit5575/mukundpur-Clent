@@ -1,6 +1,6 @@
-'use client';
+ 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, BookOpen, GraduationCap, Users, Trophy, Bookmark } from 'lucide-react';
 import Link from 'next/link';
@@ -10,21 +10,31 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
+  // Debounced scroll for performance
   useEffect(() => {
+    let timeout;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setScrolled(window.scrollY > 10);
+      }, 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => {
+  const toggleMenu = useCallback(() => setIsOpen(prev => !prev), []);
+  const closeMenu = useCallback(() => {
     setIsOpen(false);
     setActiveDropdown(null);
-  };
+  }, []);
 
-  const navItems = [
+  const toggleDropdown = useCallback(
+    (index) => setActiveDropdown(prev => (prev === index ? null : index)),
+    []
+  );
+
+  const navItems = useMemo(() => [
     {
       name: 'Find Tutors',
       icon: <GraduationCap className="w-5 h-5" />,
@@ -32,22 +42,16 @@ const Navbar = () => {
       subItems: [
         { name: 'Hire a Tutor', href: '/hirecarrer' },
         { name: 'Become a Tutor', href: '/becomeTutor' },
-        // { name: 'Tutor Rates', href: '/tutors/rates' }, 
       ],
     },
     {
       name: 'Study Materials',
       icon: <BookOpen className="w-5 h-5" />,
       href: '/materials',
-      subItems: [
-        { name: 'Class 6', href: '/study/class6' },
-        { name: 'Class 7', href: '/study/class7' },
-        { name: 'Class 8', href: '/study/class8' },
-        { name: 'Class 9', href: '/study/class9' },
-        { name: 'Class 10', href: '/study/class10' },
-        { name: 'Class 11', href: '/study/class11' },
-        { name: 'Class 12', href: '/study/class12' },
-      ],
+      subItems: Array.from({ length: 7 }, (_, i) => ({
+        name: `Class ${i + 6}`,
+        href: `/study/class${i + 6}`
+      })),
     },
     {
       name: 'Book Exchange',
@@ -56,32 +60,69 @@ const Navbar = () => {
       subItems: [
         { name: 'Buy Books', href: '/buybook' },
         { name: 'Sell Books', href: '/sellbook' },
-        // { name: 'Exchange Books', href: '/books/exchange' },
       ],
     },
-    {
-      name: 'Weekly Quiz',
-      icon: <Trophy className="w-5 h-5" />,
-      href: '/quiz',
-    },
-    {
-      name: 'Toppers',
-      icon: <Users className="w-5 h-5" />,
-      href: '/toppers',
-    },
-  ];
+    { name: 'Weekly Quiz', icon: <Trophy className="w-5 h-5" />, href: '/quiz' },
+    { name: 'Toppers', icon: <Users className="w-5 h-5" />, href: '/toppers' },
+  ], []);
 
-  const toggleDropdown = (index) => {
-    setActiveDropdown(activeDropdown === index ? null : index);
-  };
+  const baseButtonClass = "px-3 py-2 rounded-md text-base font-medium";
 
-  const itemVariants = {
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: { type: 'spring', stiffness: 300, damping: 24 },
-    },
-    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+  // NavItem Component (Reusable)
+  const NavItem = ({ item, index, isMobile = false }) => {
+    const hasSub = item.subItems && item.subItems.length > 0;
+
+    if (hasSub) {
+      return (
+        <div className={`${isMobile ? 'mb-2' : 'relative'}`}>
+          <button
+            onClick={() => toggleDropdown(index)}
+            aria-expanded={activeDropdown === index}
+            aria-controls={`dropdown-${index}`}
+            className={`${baseButtonClass} flex items-center w-full ${isMobile ? 'text-white hover:bg-indigo-700' : activeDropdown === index ? 'bg-indigo-700 text-white' : 'text-indigo-100 hover:bg-indigo-700 hover:text-white'}`}
+          >
+            {item.icon}
+            <span className="ml-2">{item.name}</span>
+          </button>
+
+          <AnimatePresence>
+            {activeDropdown === index && (
+              <motion.div
+                id={`dropdown-${index}`}
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.2 }}
+                className={`${isMobile ? 'pl-8 py-2 space-y-2' : 'absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50'}`}
+              >
+                {item.subItems.map(sub => (
+                  <Link key={sub.name} href={sub.href} passHref>
+                    <span
+                      onClick={closeMenu}
+                      className={`block px-3 py-2 rounded-md ${isMobile ? 'text-indigo-200 hover:bg-indigo-700' : 'text-gray-700 hover:bg-indigo-100'} cursor-pointer`}
+                    >
+                      {sub.name}
+                    </span>
+                  </Link>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      );
+    }
+
+    return (
+      <Link href={item.href} passHref>
+        <span
+          onClick={closeMenu}
+          className={`${baseButtonClass} flex items-center ${isMobile ? 'text-white hover:bg-indigo-700' : 'text-indigo-100 hover:bg-indigo-700 hover:text-white'} cursor-pointer`}
+        >
+          {item.icon}
+          <span className="ml-2">{item.name}</span>
+        </span>
+      </Link>
+    );
   };
 
   return (
@@ -89,116 +130,48 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-      className={`fixed w-full z-50 ${
-        scrolled ? 'bg-indigo-900 shadow-lg' : 'bg-gradient-to-r from-indigo-900 to-purple-800'
-      }`}
+      className={`fixed w-full z-50 ${scrolled ? 'bg-indigo-900 shadow-lg' : 'bg-gradient-to-r from-indigo-900 to-purple-800'}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex-shrink-0 flex items-center"
-          >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-shrink-0 flex items-center">
             <Link href="/" passHref>
               <span onClick={closeMenu} className="flex items-center space-x-2 cursor-pointer">
                 <GraduationCap className="h-8 w-8 text-white" />
-                <span className="text-white font-bold text-xl md:text-2xl font-mono">
-                  Crack_IQ
-                </span>
+                <span className="text-white font-bold text-xl md:text-2xl font-mono">Crack_IQ</span>
               </span>
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-2">
             {navItems.map((item, index) => (
-              <div key={item.name} className="relative">
-                {item.subItems ? (
-                  <>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => toggleDropdown(index)}
-                      className={`flex items-center px-3 py-2 rounded-md text-sm font-medium ${
-                        activeDropdown === index
-                          ? 'bg-indigo-700 text-white'
-                          : 'text-indigo-100 hover:bg-indigo-700 hover:text-white'
-                      }`}
-                    >
-                      {item.icon}
-                      <span className="ml-2">{item.name}</span>
-                    </motion.button>
-
-                    <AnimatePresence>
-                      {activeDropdown === index && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50"
-                        >
-                          {item.subItems.map((subItem) => (
-                            <Link key={subItem.name} href={subItem.href} passHref>
-                              <span
-                                onClick={closeMenu}
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 cursor-pointer"
-                              >
-                                {subItem.name}
-                              </span>
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </>
-                ) : (
-                  <Link href={item.href} passHref>
-                    <motion.div
-                      onClick={closeMenu}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-indigo-100 hover:bg-indigo-700 hover:text-white cursor-pointer"
-                    >
-                      {item.icon}
-                      <span className="ml-2">{item.name}</span>
-                    </motion.div>
-                  </Link>
-                )}
-              </div>
+              <NavItem key={item.name} item={item} index={index} />
             ))}
           </nav>
 
-          {/* Auth Buttons - Desktop */}
+          {/* Auth Buttons Desktop */}
           <div className="hidden md:flex items-center space-x-2">
-            <Link href="blog" passHref>
-            <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 rounded-md text-sm font-medium text-indigo-900 bg-white hover:bg-gray-100"
-              >
-Blog
+            <Link href="/blog" passHref>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-4 py-2 rounded-md text-sm font-medium text-indigo-900 bg-white hover:bg-gray-100">
+                Blog
               </motion.button>
             </Link>
             <Link href="/aboutus" passHref>
-            <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 rounded-md text-sm font-medium text-white bg-pink-500 hover:bg-pink-600"
-              >
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-4 py-2 rounded-md text-sm font-medium text-white bg-pink-500 hover:bg-pink-600">
                 About Us
               </motion.button>
             </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleMenu}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
               className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-indigo-700 focus:outline-none"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -207,7 +180,7 @@ Blog
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -219,49 +192,10 @@ Blog
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  variants={itemVariants}
-                  className="border-b border-indigo-700 last:border-b-0"
-                >
-                  {item.subItems ? (
-                    <div className="mb-2">
-                      <button
-                        onClick={() => toggleDropdown(index)}
-                        className="flex w-full items-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-indigo-700"
-                      >
-                        {item.icon}
-                        <span className="ml-2">{item.name}</span>
-                      </button>
-                      {activeDropdown === index && (
-                        <div className="pl-8 py-2 space-y-2">
-                          {item.subItems.map((subItem) => (
-                            <Link key={subItem.name} href={subItem.href} passHref>
-                              <span
-                                onClick={closeMenu}
-                                className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:bg-indigo-700 cursor-pointer"
-                              >
-                                {subItem.name}
-                              </span>
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <Link href={item.href} passHref>
-                      <span
-                        onClick={closeMenu}
-                        className="flex items-center px-3 py-2 rounded-md text-base font-medium text-white hover:bg-indigo-700 cursor-pointer"
-                      >
-                        {item.icon}
-                        <span className="ml-2">{item.name}</span>
-                      </span>
-                    </Link>
-                  )}
-                </motion.div>
+                <NavItem key={item.name} item={item} index={index} isMobile />
               ))}
             </div>
+
             <div className="pt-4 pb-6 px-4 space-y-2">
               <Link href="/aboutus" passHref>
                 <motion.button
