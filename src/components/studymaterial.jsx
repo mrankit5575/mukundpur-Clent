@@ -14,7 +14,8 @@ const StudyMaterialSection = () => {
     { id: 9, name: "Class 9", path: "/study/class9", color: "bg-yellow-100", hover: "hover:bg-yellow-200" },
     { id: 10, name: "Class 10", path: "/study/class10", color: "bg-red-100", hover: "hover:bg-red-200" },
     { id: 11, name: "Class 11", path: "/study/class11", color: "bg-indigo-100", hover: "hover:bg-indigo-200" },
-    { id: 12, name: "Class 12", path: "/study/class12", color: "bg-pink-100", hover: "hover:bg-pink-200" },
+    { id: 12, name: "Class 12_Science", path: "/study/class12", color: "bg-pink-100", hover: "hover:bg-pink-200" },
+    { id: 13, name: "Class 12_Commerce", path: "/study/class12Commerce", color: "bg-pink-100", hover: "hover:bg-pink-200" },
   ];
 
   const competitive = [

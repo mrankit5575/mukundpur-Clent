@@ -4,13 +4,15 @@ import class7 from './class7';
 import class8 from './class8';
 import class9 from './class9';
 import class12 from './class12'
+import class12Commerce from './class12commerce';
 const studyMaterial = {
   class6,
   class7,
   class8,
   class9,
   class10,
-  class12
+  class12,
+  class12Commerce,
 };
 
 export default studyMaterial;
