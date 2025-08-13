@@ -5,6 +5,7 @@ import class8 from './class8';
 import class9 from './class9';
 import class12 from './class12'
 import class12Commerce from './class12commerce';
+import class12Arts from './class12Arts';
 const studyMaterial = {
   class6,
   class7,
@@ -13,6 +14,7 @@ const studyMaterial = {
   class10,
   class12,
   class12Commerce,
+  class12Arts
 };
 
 export default studyMaterial;
