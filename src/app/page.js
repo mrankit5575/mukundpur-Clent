@@ -2,7 +2,7 @@
 export const metadata = {
   title: 'CrackIQ | Learn Smarter, Rank Higher',
   description: 'CrackIQ helps students prepare smarter with free study material, mock tests, and expert guidance for competitive exams.',
-  keywords: ['CrackIQ', 'exam preparation', 'study material', 'mock tests', 'CBSE books', 'online tutor', 'competitive exams', 'NEET', 'JEE'],
+  keywords: ['CrackIQ','crack iq', 'crack_iq','crack', 'exam preparation', 'study material', 'mock tests', 'CBSE books', 'online tutor', 'competitive exams', 'NEET', 'JEE'],
   openGraph: {
     title: 'CrackIQ | Smart Exam Prep',
     description: 'CrackIQ offers free notes, previous year papers, and smart learning tools to help students crack competitive exams.',

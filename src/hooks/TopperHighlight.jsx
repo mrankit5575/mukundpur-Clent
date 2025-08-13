@@ -2,7 +2,7 @@ export default function TopperHighlight() {
   return (
     <section className="bg-pink-50 py-12 px-4 rounded-2xl text-center shadow-lg max-w-4xl mx-auto mt-10">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-        🎓 Meet Our Topper – Anjali Pandey
+        🎓 Meet Our Topper – Geetanjali Pandey
       </h2>
 
       <p className="mt-4 text-xl text-gray-700">

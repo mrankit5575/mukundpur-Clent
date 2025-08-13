@@ -24,12 +24,13 @@ const StudyMaterialSection = () => {
   ];
 
   const subjects = [
-    { name: "Mathematics", icon: "🧮", path: "/study-material/subject/mathematics" },
+    { name: "SQL Full Notes", icon: "🧮", path: "/sqlnotes" },
     { name: "Science", icon: "🔬", path: "/study-material/subject/science" },
     { name: "Social Studies", icon: "🌍", path: "/study-material/subject/social-studies" },
     { name: "English", icon: "📖", path: "/study-material/subject/english" },
     { name: "Hindi", icon: "🖋️", path: "/study-material/subject/hindi" },
-    { name: "Computer Science", icon: "💻", path: "/webdev" },
+    { name: "Web Development", icon: "🕸️", path: "/webdev" },
+    { name: "Computer ShortCut Key", icon: "💻", path: "/short" },
   ];
 
   return (

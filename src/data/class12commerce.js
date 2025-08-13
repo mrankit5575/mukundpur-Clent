@@ -2,7 +2,7 @@ const class12Commerce = {
     name: "Class 12 Commerce",
     subjects: [
       {
-        name: "Accountancy",
+        name: "Accountancy",  
         resources: {
           pyq: {
             "2025 Set-1 Code-(1)": "https://drive.google.com/file/d/1asxsbTevbesIpbiz_b-MQcCCmkm0_8aH/view?usp=drive_link",

@@ -21,7 +21,7 @@ export default function HeroSection() {
       <Head>
         <title>CrackIQ | Learn Smarter, Rank Higher - JEE, NEET, CBSE & Competitive Exams</title>
         <meta name="description" content="Best online learning platform for 6th-12th Science/Commerce, JEE, NEET, CUET & Computer Science. Get NCERT solutions, mock tests, AI-powered practice & expert guidance." />
-        <meta name="keywords" content="CrackIQ, Crack IQ, JEE preparation, NEET coaching, CBSE Class 6-12, Science notes, Commerce study material, Computer Science learning, NCERT solutions, mock tests for JEE, NEET online coaching, CUET preparation, competitive exam practice, AI learning for students, CBSE board exam tips, PCMB study guide, coding for students" />
+        <meta name="keywords" content="CrackIQ, Crack IQ,crack iq , crack_iq , JEE preparation, NEET coaching, CBSE Class 6-12, Science notes, Commerce study material, Computer Science learning, NCERT solutions, mock tests for JEE, NEET online coaching, CUET preparation, competitive exam practice, AI learning for students, CBSE board exam tips, PCMB study guide, coding for students" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.crackiq.in/" />
 
