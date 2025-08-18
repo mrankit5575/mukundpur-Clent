@@ -3,20 +3,18 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-// Card component
+// Project card component
 const ProjectCard = ({ project, index }) => {
   if (!project) return null;
 
   return (
-    <div className="mt-20" >
-      <h1 className="text-3xl font-bold mb-6">Web Development Projects</h1>
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -5 }}
       className="bg-white rounded-lg shadow-lg overflow-hidden "
-    > <h1></h1>
+    >
       <div className="p-6">
         <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
         <p className="text-gray-600 mb-4">{project.description}</p>
@@ -54,8 +52,35 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
     </motion.div>
-    </div>
+  );
+};
 
+// Notes card component
+const NoteCard = ({ note, index }) => {
+  if (!note) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -5 }}
+      className="bg-white rounded-lg shadow-lg overflow-hidden"
+    >
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-gray-900 mb-2">{note.title}</h3>
+        <p className="text-gray-600 mb-4">{note.description}</p>
+
+        <a
+          href={note.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors inline-block"
+        >
+          View Notes
+        </a>
+      </div>
+    </motion.div>
   );
 };
 
@@ -69,19 +94,36 @@ export default function WebdevPage() {
       link: 'https://astonishing-sundae-5d6960.netlify.app/',
       pdfLink: 'https://drive.google.com/file/d/17iUHo_7oRtRwodAK4ymo6DozurdPEa7o/view?usp=sharing',
     },
+  ];
+
+  const notes = [
+    {
+      title: 'Introduction to Internet for Web Development',
+      description: 'Understanding the foundation before building websites.',
+      link: 'https://drive.google.com/file/d/10wsMd6Lbxjllrx7PO8I6GALupsxws4kA/view?usp=drive_link',
+    },
     // {
-    //   title: 'E-commerce Dashboard',
-    //   description: 'Admin dashboard to manage products & orders.',
-    //   technologies: ['React', 'Chart.js', 'Node.js'],
-    //   link: 'https://example2.com',
-    //   pdfLink: 'https://example2.com/project.pdf',
+    //   title: 'Second Class Notes',
+    //   description: 'CSS basics, selectors and styling a webpage.',
+    //   link: 'https://drive.google.com/file/d/your-second-class-link/view?usp=sharing',
     // },
+    // Add more notes objects as needed
   ];
 
   return (
-    <div className="p-6 ">
-      {/* <h2 className="text-3xl font-bold mb-6">Web Development Projects</h2> */}
+    <div className="p-6">
+      {/* Projects Section */}
+      
+
+      {/* Notes Section */}
+      <h1 className="text-3xl font-bold mb-6 mt-24">Web Development Notes</h1>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {notes.map((note, index) => (
+          <NoteCard key={index} note={note} index={index} />
+        ))}
+      </div>
+      <h1 className="text-3xl font-bold mb-6">Web Development Projects</h1>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16">
         {projects.map((proj, index) => (
           <ProjectCard key={index} project={proj} index={index} />
         ))}
