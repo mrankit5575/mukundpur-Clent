@@ -168,7 +168,7 @@ const NoteCard = ({ note, index }) => {
 
 // Page component
 export default function WebdevPage() {
-  const announcement = 'There is a quiz tomorrow! It has 10 questions, so study the topics covered in the previous class first';
+  const announcement = "Ho sakta hai meri aur sir ki misunderstanding ho gayi ho, isliye kal class na ho. Lekin isse aapki padhai mein koi dikkat nahi hogi. Jo bhi padhna hai ya jo bhi sawal ho, aap mujhse puch sakte ho. Padhai sabse important hai, toh agar koi bhi problem ho toh bas WhatsApp par msg kar dena: 9718659236. Main aapko saara content bata dunga ki kya kya padhna hai, aur doubts bhi clear kar dunga — bilkul free of cost. Bas aapko padhna hai! 👍";
 
   const projects = [
     {
