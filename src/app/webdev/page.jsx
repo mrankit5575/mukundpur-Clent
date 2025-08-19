@@ -71,14 +71,27 @@ const NoteCard = ({ note, index }) => {
         <h3 className="text-xl font-bold text-gray-900 mb-2">{note.title}</h3>
         <p className="text-gray-600 mb-4">{note.description}</p>
 
-        <a
-          href={note.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors inline-block"
-        >
-          View Notes
-        </a>
+        <div className="flex space-x-3">
+          <a
+            href={note.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors inline-block"
+          >
+            View Notes
+          </a>
+
+          {note.readLink && (
+            <a
+              href={note.readLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors inline-block"
+            >
+              Read Online
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   );
@@ -92,7 +105,8 @@ export default function WebdevPage() {
       description: 'Basic calculator built using HTML, CSS, and JavaScript.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       link: 'https://astonishing-sundae-5d6960.netlify.app/',
-      pdfLink: 'https://drive.google.com/file/d/17iUHo_7oRtRwodAK4ymo6DozurdPEa7o/view?usp=sharing',
+      pdfLink:
+        'https://drive.google.com/file/d/17iUHo_7oRtRwodAK4ymo6DozurdPEa7o/view?usp=sharing',
     },
   ];
 
@@ -101,20 +115,18 @@ export default function WebdevPage() {
       title: 'Introduction to Internet for Web Development',
       description: 'Understanding the foundation before building websites.',
       link: 'https://drive.google.com/file/d/10wsMd6Lbxjllrx7PO8I6GALupsxws4kA/view?usp=drive_link',
+      readLink: 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview', // New link for reading directly
     },
     // {
     //   title: 'Second Class Notes',
     //   description: 'CSS basics, selectors and styling a webpage.',
     //   link: 'https://drive.google.com/file/d/your-second-class-link/view?usp=sharing',
+    //   readLink: 'https://example.com/second-class-read-online',
     // },
-    // Add more notes objects as needed
   ];
 
   return (
     <div className="p-6">
-      {/* Projects Section */}
-      
-
       {/* Notes Section */}
       <h1 className="text-3xl font-bold mb-6 mt-24">Web Development Notes</h1>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -122,6 +134,8 @@ export default function WebdevPage() {
           <NoteCard key={index} note={note} index={index} />
         ))}
       </div>
+
+      {/* Projects Section */}
       <h1 className="text-3xl font-bold mb-6">Web Development Projects</h1>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16">
         {projects.map((proj, index) => (
