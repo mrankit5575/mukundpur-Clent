@@ -33,13 +33,15 @@ import StudyMaterialSection from '@/components/studymaterial';
 import TeacherList from '@/Teacher/TeacherList';
 import BookList from '@/bookdata.js/BookList';
 import Chatbot from '@/components/Chatbot';
+import AnnouncementBanner from '@/components/Announcement';
 // import ChatPage from '@/components/FloatingAssistant';
   
 export default function Page() {
   return (
     <>
       <Navbar />
-      <HeroSection />
+      <AnnouncementBanner/>
+      <HeroSection  />
       <StudyMaterialSection />
       <BookList />
       <TeacherList />

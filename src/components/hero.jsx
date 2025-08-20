@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import Link from "next/link";
 import Image from "next/image";
 import { Poppins } from 'next/font/google';
-
+ 
 const poppins = Poppins({ subsets: ['latin'], weight: ['400','500','600','700'], display: 'swap' });
 
 // Dynamically import Player with SSR disabled
@@ -32,7 +32,7 @@ export default function HeroSection() {
         <meta property="og:url" content="https://www.crackiq.in/" />
         <meta property="og:type" content="website" />
       </Head>
-
+<>
       <main className={poppins.className}>
         <section className="min-h-[90vh] flex items-center bg-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
           {/* Background circles */}
@@ -41,7 +41,6 @@ export default function HeroSection() {
             <div className="absolute bottom-1/4 right-20 w-48 h-48 rounded-full bg-blue-50/70" />
             <div className="absolute top-1/3 right-1/4 w-24 h-24 rounded-full bg-blue-100/70" />
           </div>
-
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             {/* Left Content */}
             <motion.div
@@ -49,8 +48,8 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0 }}
               className="space-y-8 text-[#0c0950]"
-            >
-              <div className="inline-block px-4 py-2 bg-blue-50 backdrop-blur-sm rounded-full border border-blue-200 mb-4">
+              >
+               <div className="inline-block px-4 py-2 bg-blue-50 backdrop-blur-sm rounded-full border border-blue-200 mb-4">
                 <p className="text-sm font-medium text-[#0c0950]">India's Premier Education Platform</p>
               </div>
 
@@ -137,6 +136,8 @@ export default function HeroSection() {
           </div>
         </section>
       </main>
+      </>
+
     </>
   );
 }

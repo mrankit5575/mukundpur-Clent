@@ -6,7 +6,7 @@ export default function TopperHighlight() {
       </h2>
 
       <p className="mt-4 text-xl text-gray-700">
-        Scored <span className="text-green-600 font-semibold">99%</span> in the 12th Board Exams (CBSE)
+        Scored <span className="text-green-600 font-semibold">99  %</span> in the 12th Board Exams (CBSE)
       </p>
 
       <p className="mt-2 text-md text-gray-600">
