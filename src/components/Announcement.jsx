@@ -22,12 +22,13 @@ export default function AnnouncementBanner() {
       >
         <Megaphone className="w-5 h-5 mr-2 flex-shrink-0" />
         <p className="text-sm md:text-base font-medium text-center">
-  We are launching <span className="font-semibold">offline courses</span> soon, in collaboration with a reputed institute to provide you quality education. 
-  Get details and secure your spot this month via WhatsApp:{" "}
+  Share your notes and make this site helpful for everyone! Every note you share can help others. 
+  Contribute your notes via WhatsApp:{" "}
   <a href="https://wa.me/9718659236" className="underline font-semibold">
     9718659236
   </a>
 </p>
+
 
 
       </motion.div>
